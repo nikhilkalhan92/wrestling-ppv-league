@@ -1,0 +1,87 @@
+{
+  "ppv_max_points": {
+    "WWE": {
+      "Royal Rumble": 0,
+      "Elimination Chamber": 0
+    },
+    "AEW": {
+      "Revolution": 0
+    },
+    "TNA": {
+      "Genesis": 8
+    },
+    "NXT": {}
+  },
+  "players": [
+    {
+      "name": "Sam",
+      "WWE": {
+        "Royal Rumble": 0,
+        "Elimination Chamber": 0
+      },
+      "AEW": {
+        "Revolution": 0
+      },
+      "TNA": {
+        "Genesis": 0
+      },
+      "NXT": {}
+    },
+    {
+      "name": "Tom",
+      "WWE": {
+        "Royal Rumble": 0,
+        "Elimination Chamber": 0
+      },
+      "AEW": {
+        "Revolution": 0
+      },
+      "TNA": {
+        "Genesis": 0
+      },
+      "NXT": {}
+    },
+    {
+      "name": "Shaz",
+      "WWE": {
+        "Royal Rumble": 0,
+        "Elimination Chamber": 0
+      },
+      "AEW": {
+        "Revolution": 0
+      },
+      "TNA": {
+        "Genesis": 0
+      },
+      "NXT": {}
+    },
+    {
+      "name": "Jake",
+      "WWE": {
+        "Royal Rumble": 0,
+        "Elimination Chamber": 0
+      },
+      "AEW": {
+        "Revolution": 0
+      },
+      "TNA": {
+        "Genesis": 0
+      },
+      "NXT": {}
+    },
+    {
+      "name": "Nik",
+      "WWE": {
+        "Royal Rumble": 0,
+        "Elimination Chamber": 0
+      },
+      "AEW": {
+        "Revolution": 0
+      },
+      "TNA": {
+        "Genesis": 0
+      },
+      "NXT": {}
+    }
+  ]
+}
