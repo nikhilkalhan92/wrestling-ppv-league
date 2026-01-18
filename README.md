@@ -4,6 +4,12 @@ This website displays a **live wrestling league table** showing how players are 
 
 The table updates automatically whenever the backend data changes.
 
+cd wrestling-ppv-league
+npm run dev
+
+**Live Website**
+- https://wrestling-ppv-league-69rj.vercel.app/
+
 ---
 
 ## 🏆 What The Website Does
@@ -46,15 +52,8 @@ The table updates automatically whenever the backend data changes.
 - **JavaScript (Vanilla)** – Data loading, calculations, sorting, and rendering  
 - **JSON** – Backend data source (scores and events)
 
-This is a **static website**:
-- No database
-- No backend server
-- No frameworks
-
 Designed to run on:
-- GitHub Pages
-- Netlify
-- Any static hosting platform
+- Vercel
 
 ---
 

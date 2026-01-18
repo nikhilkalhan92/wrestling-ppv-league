@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export default function App() {
   const [data, setData] = useState(null);
+  const previousRanks = useRef({});
 
   useEffect(() => {
     fetch(`/data/scores.json?ts=${Date.now()}`)
@@ -9,16 +10,15 @@ export default function App() {
       .then(setData);
   }, []);
 
-  if (!data) {
-    return <p style={{ textAlign: "center" }}>Loading…</p>;
-  }
+  if (!data) return <p style={{ textAlign: "center" }}>Loading…</p>;
 
   const companies = ["WWE", "AEW", "NXT", "TNA"];
 
   const sum = obj =>
     Object.values(obj || {}).reduce((a, b) => a + b, 0);
 
-  // MAIN TABLE DATA
+  /* ---------------- MAIN TABLE ---------------- */
+
   const players = data.players
     .map(p => {
       const totals = {
@@ -73,15 +73,21 @@ export default function App() {
           </thead>
           <tbody>
             {players.map((p, i) => {
-              const rowClass =
-                i === 0
-                  ? "winner"
-                  : i === players.length - 1
-                  ? "loser"
-                  : "";
+              let rowClass = "";
+              const prev = previousRanks.current[p.name];
+
+              if (prev !== undefined) {
+                if (i < prev) rowClass = "rank-up";
+                if (i > prev) rowClass = "rank-down";
+              }
+
+              previousRanks.current[p.name] = i;
+
+              if (i === 0) rowClass += " winner";
+              if (i === players.length - 1) rowClass += " loser";
 
               return (
-                <tr key={p.name} className={rowClass}>
+                <tr key={p.name} className={rowClass.trim()}>
                   <td>{i + 1}</td>
                   <td>{p.name}</td>
                   <td>{p.WWE}</td>
@@ -95,11 +101,11 @@ export default function App() {
           </tbody>
         </table>
 
-        {/* COMPANY PPV TABLES */}
+        {/* COMPANY TABLES */}
         {companies.map(company => {
           const maxPoints = data.ppv_max_points[company] || {};
 
-          // Collect PPVs
+          // Collect PPVs for this company
           const ppvs = [];
           data.players.forEach(player => {
             Object.keys(player[company] || {}).forEach(ppv => {
@@ -107,9 +113,6 @@ export default function App() {
             });
           });
 
-          if (ppvs.length === 0) return null;
-
-          // Per-player totals for this company
           const companyTotals = {};
           players.forEach(p => (companyTotals[p.name] = 0));
 
@@ -128,31 +131,52 @@ export default function App() {
                 </thead>
 
                 <tbody>
-                  {ppvs.map(ppv => (
-                    <tr key={ppv}>
-                      {/* PPV name + max */}
-                      <td>
-                        {ppv}
-                        <span className="ppv-max"> / {maxPoints[ppv]}</span>
+                  {ppvs.length === 0 ? (
+                    <tr>
+                      <td colSpan={players.length + 1} style={{ opacity: 0.6 }}>
+                        No PPVs yet
                       </td>
-
-                      {players.map(p => {
-                        const val = p.raw[company]?.[ppv] ?? 0;
-                        companyTotals[p.name] += val;
-                        return <td key={p.name}>{val}</td>;
-                      })}
                     </tr>
-                  ))}
+                  ) : (
+                    <>
+                      {ppvs.map(ppv => (
+                        <tr key={ppv}>
+                          <td>
+                            {ppv}
+                            <span className="ppv-max"> / {maxPoints[ppv]}</span>
+                          </td>
 
-                  {/* TOTAL ROW */}
-                  <tr className="company-total-row">
-                    <td><strong>Total</strong></td>
-                    {players.map(p => (
-                      <td key={p.name}>
-                        <strong>{companyTotals[p.name]}</strong>
-                      </td>
-                    ))}
-                  </tr>
+                          {players.map(p => {
+                            const val = p.raw[company]?.[ppv] ?? 0;
+                            companyTotals[p.name] += val;
+                            return <td key={p.name}>{val}</td>;
+                          })}
+                        </tr>
+                      ))}
+
+                      {/* TOTAL ROW */}
+                      <tr className="company-total-row">
+                        <td><strong>Total</strong></td>
+                        {players.map(p => {
+                          const maxTotal = Math.max(
+                            ...players.map(pl => sum(pl.raw[company]))
+                          );
+
+                          const isLeader =
+                            sum(p.raw[company]) === maxTotal && maxTotal !== 0;
+
+                          return (
+                            <td
+                              key={p.name}
+                              className={isLeader ? "company-leader" : ""}
+                            >
+                              <strong>{companyTotals[p.name]}</strong>
+                            </td>
+                          );
+                        })}
+                      </tr>
+                    </>
+                  )}
                 </tbody>
               </table>
             </section>
