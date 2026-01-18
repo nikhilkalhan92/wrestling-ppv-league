@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+}
+.site-header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  background: #111;
+  color: #fff;
+  padding: 28px 40px;
+}
+
+/* Logo containers */
+.logo-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+}
+
+/* Force equal space on both sides */
+.logo-group.left,
+.logo-group.right {
+  min-width: 240px;
+}
+
+/* Logo sizing */
+.logo-group img {
+  height: 64px;          /* 👈 bigger logos */
+  max-width: 140px;     /* 👈 prevents stretching */
+  object-fit: contain;
+}
+
+/* Title stays centered */
+.title {
+  text-align: center;
+}
+
+.title h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.title p {
+  margin-top: 6px;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+main {
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  margin-bottom: 32px;
+}
+
+th, td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+th {
+  background: #222;
+  color: #fff;
+}
+
+.ppv-max {
+  font-size: 12px;
+  color: #666;
+}
+.winner {
+  font-weight: bold;
+  color: #2a9d8f;
+}
+.loser {
+  color: #e76f51;
+}
+
+/* Winner / Loser highlighting */
+tr.winner {
+  background-color: #1e7f43 !important; /* green */
+  color: #fff;
+}
+
+tr.loser {
+  background-color: #8b1e1e !important; /* red */
+  color: #fff;
+}
+
+tr.winner td,
+tr.loser td {
+  font-weight: bold;
+}
+
+.company-total-row {
+  background: #f0f0f0;
+  border-top: 2px solid #ccc;
+}
+
+.company-total-row td {
+  font-weight: bold;
+}
+
