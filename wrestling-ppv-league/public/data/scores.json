@@ -1,6 +1,9 @@
+
+
 {
   "ppv_max_points": {
     "WWE": {
+      "Saturday Night's Main Event": 4,
       "Royal Rumble": 0,
       "Elimination Chamber": 0
     },
@@ -16,6 +19,7 @@
     {
       "name": "Sam",
       "WWE": {
+        "Saturday Night's Main Event": 0,
         "Royal Rumble": 0,
         "Elimination Chamber": 0
       },
@@ -30,6 +34,7 @@
     {
       "name": "Tom",
       "WWE": {
+        "Saturday Night's Main Event": 0,
         "Royal Rumble": 0,
         "Elimination Chamber": 0
       },
@@ -44,6 +49,7 @@
     {
       "name": "Shaz",
       "WWE": {
+        "Saturday Night's Main Event": 0,
         "Royal Rumble": 0,
         "Elimination Chamber": 0
       },
@@ -58,6 +64,7 @@
     {
       "name": "Jake",
       "WWE": {
+        "Saturday Night's Main Event": 0,
         "Royal Rumble": 0,
         "Elimination Chamber": 0
       },
@@ -72,6 +79,7 @@
     {
       "name": "Nik",
       "WWE": {
+        "Saturday Night's Main Event": 0,
         "Royal Rumble": 0,
         "Elimination Chamber": 0
       },

@@ -3,6 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "json.schemas": [
+    {
+      "fileMatch": ["jscpd.json"],
+      "url": "https://json.schemastore.org/jscpd.json"
+    }
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",

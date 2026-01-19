@@ -1,8 +1,10 @@
 import { useEffect, useState, useRef } from "react";
 
+/*---------------- APP COMPONENT ---------------- */
 export default function App() {
   const [data, setData] = useState(null);
-  const previousRanks = useRef({});
+  const prevTotals = useRef({});
+  const prevCompanyTotals = useRef({});
 
   useEffect(() => {
     fetch(`/data/scores.json?ts=${Date.now()}`)
@@ -17,7 +19,21 @@ export default function App() {
   const sum = obj =>
     Object.values(obj || {}).reduce((a, b) => a + b, 0);
 
-  /* ---------------- MAIN TABLE ---------------- */
+  /* ---------------- DETECT LATEST PPV ---------------- */
+
+  let latestPPV = null;
+  let latestCompany = null;
+
+  companies.forEach(company => {
+    data.players.forEach(p => {
+      Object.keys(p[company] || {}).forEach(ppv => {
+        latestPPV = ppv;
+        latestCompany = company;
+      });
+    });
+  });
+
+  /* ---------------- MAIN TABLE DATA ---------------- */
 
   const players = data.players
     .map(p => {
@@ -28,14 +44,37 @@ export default function App() {
         TNA: sum(p.TNA)
       };
 
+      const total = Object.values(totals).reduce((a, b) => a + b, 0);
+      const prev = prevTotals.current[p.name] ?? total;
+      const diff = total - prev;
+
+      prevTotals.current[p.name] = total;
+
       return {
         name: p.name,
         ...totals,
-        total: Object.values(totals).reduce((a, b) => a + b, 0),
+        total,
+        diff,
         raw: p
       };
     })
     .sort((a, b) => b.total - a.total);
+
+  const maxTotal = Math.max(...players.map(p => p.total));
+
+  /* ---------------- MOMENTUM (LAST 2 PPVs) ---------------- */
+
+  const getMomentum = (player, company) => {
+    const ppvs = Object.entries(player.raw[company] || {});
+    if (ppvs.length < 2) return null;
+
+    const lastTwo = ppvs.slice(-2).map(p => p[1]);
+    const sumLastTwo = lastTwo.reduce((a, b) => a + b, 0);
+
+    if (sumLastTwo >= 6) return "hot";
+    if (sumLastTwo <= 1) return "cold";
+    return null;
+  };
 
   return (
     <>
@@ -71,29 +110,46 @@ export default function App() {
               <th>Total</th>
             </tr>
           </thead>
+
           <tbody>
             {players.map((p, i) => {
-              let rowClass = "";
-              const prev = previousRanks.current[p.name];
-
-              if (prev !== undefined) {
-                if (i < prev) rowClass = "rank-up";
-                if (i > prev) rowClass = "rank-down";
-              }
-
-              previousRanks.current[p.name] = i;
-
-              if (i === 0) rowClass += " winner";
-              if (i === players.length - 1) rowClass += " loser";
+              const isLeader = p.total === maxTotal && maxTotal !== 0;
+              const isBottom = i === players.length - 1;
 
               return (
-                <tr key={p.name} className={rowClass.trim()}>
+                <tr
+                  key={p.name}
+                  className={`${isLeader ? "winner" : ""} ${isBottom ? "loser" : ""}`}
+                >
                   <td>{i + 1}</td>
-                  <td>{p.name}</td>
-                  <td>{p.WWE}</td>
-                  <td>{p.AEW}</td>
-                  <td>{p.NXT}</td>
-                  <td>{p.TNA}</td>
+
+                  <td className="player-cell">
+                    {p.name}
+
+                    {p.diff !== 0 && (
+                      <span
+                        className={`change ${p.diff > 0 ? "up" : "down"}`}
+                        title={`${p.diff > 0 ? "+" : ""}${p.diff} points (${latestPPV})`}
+                      >
+                        {p.diff > 0 ? "▲" : "▼"}
+                      </span>
+                    )}
+
+                    {isLeader && <span className="icon">👑</span>}
+                    {isBottom && <span className="icon">🔻</span>}
+                  </td>
+
+                  {companies.map(c => {
+                    const momentum = getMomentum(p, c);
+                    return (
+                      <td key={c}>
+                        {p[c]}
+                        {momentum === "hot" && <span className="momentum hot">🔥</span>}
+                        {momentum === "cold" && <span className="momentum cold">❄️</span>}
+                      </td>
+                    );
+                  })}
+
                   <td><strong>{p.total}</strong></td>
                 </tr>
               );
@@ -105,16 +161,15 @@ export default function App() {
         {companies.map(company => {
           const maxPoints = data.ppv_max_points[company] || {};
 
-          // Collect PPVs for this company
           const ppvs = [];
-          data.players.forEach(player => {
-            Object.keys(player[company] || {}).forEach(ppv => {
+          data.players.forEach(p => {
+            Object.keys(p[company] || {}).forEach(ppv => {
               if (!ppvs.includes(ppv)) ppvs.push(ppv);
             });
           });
 
-          const companyTotals = {};
-          players.forEach(p => (companyTotals[p.name] = 0));
+          const totals = {};
+          players.forEach(p => (totals[p.name] = 0));
 
           return (
             <section key={company}>
@@ -131,52 +186,36 @@ export default function App() {
                 </thead>
 
                 <tbody>
-                  {ppvs.length === 0 ? (
-                    <tr>
-                      <td colSpan={players.length + 1} style={{ opacity: 0.6 }}>
-                        No PPVs yet
+                  {ppvs.map(ppv => (
+                    <tr
+                      key={ppv}
+                      className={
+                        ppv === latestPPV && company === latestCompany
+                          ? "latest-ppv"
+                          : ""
+                      }
+                    >
+                      <td>
+                        {ppv} / {maxPoints[ppv]}
+                        {ppv === latestPPV && company === latestCompany && (
+                          <span className="latest-tag">LATEST</span>
+                        )}
                       </td>
+
+                      {players.map(p => {
+                        const val = p.raw[company]?.[ppv] ?? 0;
+                        totals[p.name] += val;
+                        return <td key={p.name}>{val}</td>;
+                      })}
                     </tr>
-                  ) : (
-                    <>
-                      {ppvs.map(ppv => (
-                        <tr key={ppv}>
-                          <td>
-                            {ppv}
-                            <span className="ppv-max"> / {maxPoints[ppv]}</span>
-                          </td>
+                  ))}
 
-                          {players.map(p => {
-                            const val = p.raw[company]?.[ppv] ?? 0;
-                            companyTotals[p.name] += val;
-                            return <td key={p.name}>{val}</td>;
-                          })}
-                        </tr>
-                      ))}
-
-                      {/* TOTAL ROW */}
-                      <tr className="company-total-row">
-                        <td><strong>Total</strong></td>
-                        {players.map(p => {
-                          const maxTotal = Math.max(
-                            ...players.map(pl => sum(pl.raw[company]))
-                          );
-
-                          const isLeader =
-                            sum(p.raw[company]) === maxTotal && maxTotal !== 0;
-
-                          return (
-                            <td
-                              key={p.name}
-                              className={isLeader ? "company-leader" : ""}
-                            >
-                              <strong>{companyTotals[p.name]}</strong>
-                            </td>
-                          );
-                        })}
-                      </tr>
-                    </>
-                  )}
+                  <tr className="company-total-row">
+                    <td><strong>Total</strong></td>
+                    {players.map(p => (
+                      <td key={p.name}><strong>{totals[p.name]}</strong></td>
+                    ))}
+                  </tr>
                 </tbody>
               </table>
             </section>
