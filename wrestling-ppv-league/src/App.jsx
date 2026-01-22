@@ -86,8 +86,12 @@ export default function App() {
         </div>
 
         <div className="title">
-          <h1>League Table</h1>
-          <p>Live standings • Read-only</p>
+          <h1>Fantasy Wrestling League</h1>
+          <p>Live standings</p>
+          <div className="nav-buttons">
+                <a href="/rules.html" className="rules-btn">Rules</a>
+                <a href="/archive.html" className="rules-btn">Archive</a>
+        </div>
         </div>
 
         <div className="logo-group right">

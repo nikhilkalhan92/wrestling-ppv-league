@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PPV Archive</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0e0e0e;
+      color: #fff;
+    }
+
+    header {
+      background: linear-gradient(180deg, #111, #000);
+      padding: 28px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .company-title {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .company-title img {
+      height: 48px;
+    }
+
+    .ppv-card {
+      background: #1b1b1b;
+      border-radius: 10px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    }
+
+    .ppv-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .ppv-header img {
+      height: 60px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .title-match {
+      color: #f5c542;
+      font-weight: bold;
+    }
+
+    hr {
+      margin: 30px 0;
+      opacity: 0.3;
+    }
+
+    /* PICKS GRID */
+    .picks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .player-pick {
+      background: #111;
+      padding: 16px;
+      border-radius: 8px;
+    }
+
+    .player-pick strong {
+      display: block;
+      margin-bottom: 10px;
+      color: #f5c542;
+      text-align: center;
+    }
+
+    .player-pick ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .player-pick li {
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    .correct {
+      color: #6aff6a;
+      font-weight: bold;
+    }
+
+    .wrong {
+      color: #999;
+      text-decoration: line-through;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 18px;
+      background: linear-gradient(135deg, #f5c542, #e6a800);
+      color: #111;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+
+    .back-btn:hover {
+      filter: brightness(1.1);
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>📁 PPV Archive</h1>
+</header>
+
+<main>
+
+  <!-- TNA -->
+  <section>
+    <div class="company-title">
+      <img src="/img/tna.png" alt="TNA" />
+      <h2>TNA</h2>
+    </div>
+
+    <div class="ppv-card">
+      <div class="ppv-header">
+        <img src="/img/tna.png" alt="Genesis" />
+        <h3>Genesis 2026</h3>
+      </div>
+
+      <ul>
+        <li><strong>A. J. Francis</strong> defeated <strong>Rich Swann</strong></li>
+        <li><strong>Mustafa Ali</strong> defeated <strong>Elijah</strong></li>
+        <li><strong>Eddie Edwards</strong> defeated <strong>JDC</strong></li>
+        <li><strong>Ryan Nemeth</strong> defeated <strong>Mara Sadé</strong></li>
+        <li><strong>Léi Yǐng Lee</strong> defeated <strong>Zaria</strong> — <span class="title-match">Title Match</span></li>
+        <li><strong>The Hardys</strong> defeated <strong>The Righteous</strong> — <span class="title-match">Title Match</span></li>
+        <li><strong>Joe Hendry</strong> defeated <strong>Cedric Alexander & Moose</strong></li>
+        <li><strong>Mike Santana</strong> defeated <strong>Frankie Kazarian</strong> — <span class="title-match">Title Match</span></li>
+      </ul>
+
+      <hr />
+
+      <h4>📝 Player Predictions</h4>
+
+      <div class="picks-grid">
+
+        <div class="player-pick">
+          <strong>Samuel</strong>
+          <ul>
+            <li class="correct">Ryan Nemeth</li>
+            <li class="correct">Joe Hendry</li>
+            <li class="wrong">Rich Swann</li>
+            <li class="wrong">Elijah</li>
+            <li class="correct">Léi Yǐng Lee</li>
+            <li class="correct">Mike Santana</li>
+            <li class="correct">Eddie Edwards</li>
+          </ul>
+        </div>
+
+        <div class="player-pick">
+          <strong>Jake</strong>
+          <ul>
+            <li class="wrong">Mara Sadé</li>
+            <li class="wrong">Moose</li>
+            <li class="wrong">Rich Swann</li>
+            <li class="wrong">Elijah</li>
+            <li class="correct">The Hardys</li>
+            <li class="correct">Léi Yǐng Lee</li>
+            <li class="correct">Mike Santana</li>
+            <li class="correct">Eddie Edwards</li>
+          </ul>
+        </div>
+
+        <div class="player-pick">
+          <strong>Nik</strong>
+          <ul>
+            <li class="wrong">Mara Sadé</li>
+            <li class="correct">Joe Hendry</li>
+            <li class="correct">A. J. Francis</li>
+            <li class="wrong">Elijah</li>
+            <li class="correct">The Hardys</li>
+            <li class="correct">Léi Yǐng Lee</li>
+            <li class="correct">Mike Santana</li>
+            <li class="wrong">JDC</li>
+          </ul>
+        </div>
+
+        <div class="player-pick">
+          <strong>Shaz</strong>
+          <ul>
+            <li class="wrong">Mara Sadé</li>
+            <li class="wrong">Moose</li>
+            <li class="wrong">Rich Swann</li>
+            <li class="correct">Mustafa Ali</li>
+            <li class="correct">The Hardys</li>
+            <li class="correct">Léi Yǐng Lee</li>
+            <li class="correct">Mike Santana</li>
+            <li class="correct">Eddie Edwards</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <a href="/" class="back-btn">← Back to League Table</a>
+
+</main>
+
+</body>
+</html>
