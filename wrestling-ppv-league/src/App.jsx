@@ -90,7 +90,10 @@ export default function App() {
           <p>Live standings</p>
           <div className="nav-buttons">
                 <a href="/rules.html" className="rules-btn">Rules</a>
-                <a href="/archive.html" className="rules-btn">Archive</a>
+                <a href="/archive/tna.html">TNA Archive</a>
+                <a href="/archive/wwe.html">WWE Archive</a>
+                <a href="/archive/nxt.html">NXT Archive</a>
+                <a href="/archive/aew.html">AEW Archive</a>
         </div>
         </div>
 
