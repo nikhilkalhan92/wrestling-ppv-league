@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>PPV Archive</title>
+  <title>TNA PPV Archive</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <style>
@@ -19,26 +19,10 @@
       text-align: center;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 32px;
-    }
-
     main {
       max-width: 1200px;
       margin: 40px auto;
       padding: 0 20px;
-    }
-
-    .company-title {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 20px;
-    }
-
-    .company-title img {
-      height: 48px;
     }
 
     .ppv-card {
@@ -64,8 +48,8 @@
     }
 
     li {
-      margin-bottom: 10px;
-      line-height: 1.6;
+      margin-bottom: 8px;
+      line-height: 1.5;
     }
 
     .title-match {
@@ -78,12 +62,10 @@
       opacity: 0.3;
     }
 
-    /* PICKS GRID */
     .picks-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 16px;
-      margin-top: 16px;
     }
 
     .player-pick {
@@ -99,16 +81,6 @@
       text-align: center;
     }
 
-    .player-pick ul {
-      margin: 0;
-      padding-left: 18px;
-    }
-
-    .player-pick li {
-      margin-bottom: 6px;
-      font-size: 14px;
-    }
-
     .correct {
       color: #6aff6a;
       font-weight: bold;
@@ -119,19 +91,28 @@
       text-decoration: line-through;
     }
 
-    .back-btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 10px 18px;
-      background: linear-gradient(135deg, #f5c542, #e6a800);
-      color: #111;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 6px;
+    /* BOTTOM NAV */
+    .archive-nav {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 40px 0 10px;
+      flex-wrap: wrap;
     }
 
-    .back-btn:hover {
-      filter: brightness(1.1);
+    .archive-nav a {
+      padding: 10px 16px;
+      background: #111;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      border: 1px solid #333;
+    }
+
+    .archive-nav a:hover {
+      background: linear-gradient(135deg, #f5c542, #e6a800);
+      color: #111;
     }
   </style>
 </head>
@@ -139,101 +120,97 @@
 <body>
 
 <header>
-  <h1>📁 PPV Archive</h1>
+  <h1>TNA PPV Archive</h1>
 </header>
 
 <main>
 
-  <!-- TNA -->
-  <section>
-    <div class="company-title">
+  <div class="ppv-card">
+    <div class="ppv-header">
       <img src="/img/tna.png" alt="TNA" />
-      <h2>TNA</h2>
+      <h2>Genesis 2026</h2>
     </div>
 
-    <div class="ppv-card">
-      <div class="ppv-header">
-        <img src="/img/tna.png" alt="Genesis" />
-        <h3>Genesis 2026</h3>
+    <ul>
+      <li><strong>A. J. Francis</strong> defeated Rich Swann</li>
+      <li><strong>Mustafa Ali</strong> defeated Elijah</li>
+      <li><strong>Eddie Edwards</strong> defeated JDC</li>
+      <li><strong>Ryan Nemeth</strong> defeated Mara Sadé</li>
+      <li><strong>Léi Yǐng Lee</strong> defeated Zaria — <span class="title-match">Title Match</span></li>
+      <li><strong>The Hardys</strong> defeated The Righteous — <span class="title-match">Title Match</span></li>
+      <li><strong>Joe Hendry</strong> defeated Cedric Alexander & Moose</li>
+      <li><strong>Mike Santana</strong> defeated Frankie Kazarian — <span class="title-match">Title Match</span></li>
+    </ul>
+
+    <hr />
+
+    <h3>Player Predictions</h3>
+
+    <div class="picks-grid">
+      <div class="player-pick">
+        <strong>Samuel</strong>
+        <ul>
+          <li class="correct">Ryan Nemeth</li>
+          <li class="correct">Joe Hendry</li>
+          <li class="wrong">Rich Swann</li>
+          <li class="wrong">Elijah</li>
+          <li class="correct">Léi Yǐng Lee</li>
+          <li class="correct">Mike Santana</li>
+          <li class="correct">Eddie Edwards</li>
+        </ul>
       </div>
 
-      <ul>
-        <li><strong>A. J. Francis</strong> defeated <strong>Rich Swann</strong></li>
-        <li><strong>Mustafa Ali</strong> defeated <strong>Elijah</strong></li>
-        <li><strong>Eddie Edwards</strong> defeated <strong>JDC</strong></li>
-        <li><strong>Ryan Nemeth</strong> defeated <strong>Mara Sadé</strong></li>
-        <li><strong>Léi Yǐng Lee</strong> defeated <strong>Zaria</strong> — <span class="title-match">TNA Knockouts World Championship</span></li>
-        <li><strong>The Hardys</strong> defeated <strong>The Righteous</strong> — <span class="title-match">TNA World Tag Team Championship</span></li>
-        <li><strong>Joe Hendry</strong> defeated <strong>Cedric Alexander & Moose</strong></li>
-        <li><strong>Mike Santana</strong> defeated <strong>Frankie Kazarian</strong> — <span class="title-match">TNA World Heavyweight Championship</span></li>
-      </ul>
+      <div class="player-pick">
+        <strong>Jake</strong>
+        <ul>
+          <li class="wrong">Mara Sadé</li>
+          <li class="wrong">Moose</li>
+          <li class="wrong">Rich Swann</li>
+          <li class="wrong">Elijah</li>
+          <li class="correct">The Hardys</li>
+          <li class="correct">Léi Yǐng Lee</li>
+          <li class="correct">Mike Santana</li>
+          <li class="correct">Eddie Edwards</li>
+        </ul>
+      </div>
 
-      <hr />
+      <div class="player-pick">
+        <strong>Nik</strong>
+        <ul>
+          <li class="wrong">Mara Sadé</li>
+          <li class="correct">Joe Hendry</li>
+          <li class="correct">A. J. Francis</li>
+          <li class="wrong">Elijah</li>
+          <li class="correct">The Hardys</li>
+          <li class="correct">Léi Yǐng Lee</li>
+          <li class="correct">Mike Santana</li>
+          <li class="wrong">JDC</li>
+        </ul>
+      </div>
 
-      <h4>📝 Player Predictions</h4>
-
-      <div class="picks-grid">
-
-        <div class="player-pick">
-          <strong>Samuel</strong>
-          <ul>
-            <li class="correct">Ryan Nemeth</li>
-            <li class="correct">Joe Hendry</li>
-            <li class="wrong">Rich Swann</li>
-            <li class="wrong">Elijah</li>
-            <li class="correct">Léi Yǐng Lee</li>
-            <li class="correct">Mike Santana</li>
-            <li class="correct">Eddie Edwards</li>
-          </ul>
-        </div>
-
-        <div class="player-pick">
-          <strong>Jake</strong>
-          <ul>
-            <li class="wrong">Mara Sadé</li>
-            <li class="wrong">Moose</li>
-            <li class="wrong">Rich Swann</li>
-            <li class="wrong">Elijah</li>
-            <li class="correct">The Hardys</li>
-            <li class="correct">Léi Yǐng Lee</li>
-            <li class="correct">Mike Santana</li>
-            <li class="correct">Eddie Edwards</li>
-          </ul>
-        </div>
-
-        <div class="player-pick">
-          <strong>Nik</strong>
-          <ul>
-            <li class="wrong">Mara Sadé</li>
-            <li class="correct">Joe Hendry</li>
-            <li class="correct">A. J. Francis</li>
-            <li class="wrong">Elijah</li>
-            <li class="correct">The Hardys</li>
-            <li class="correct">Léi Yǐng Lee</li>
-            <li class="correct">Mike Santana</li>
-            <li class="wrong">JDC</li>
-          </ul>
-        </div>
-
-        <div class="player-pick">
-          <strong>Shaz</strong>
-          <ul>
-            <li class="wrong">Mara Sadé</li>
-            <li class="wrong">Moose</li>
-            <li class="wrong">Rich Swann</li>
-            <li class="correct">Mustafa Ali</li>
-            <li class="correct">The Hardys</li>
-            <li class="correct">Léi Yǐng Lee</li>
-            <li class="correct">Mike Santana</li>
-            <li class="correct">Eddie Edwards</li>
-          </ul>
-        </div>
-
+      <div class="player-pick">
+        <strong>Shaz</strong>
+        <ul>
+          <li class="wrong">Mara Sadé</li>
+          <li class="wrong">Moose</li>
+          <li class="wrong">Rich Swann</li>
+          <li class="correct">Mustafa Ali</li>
+          <li class="correct">The Hardys</li>
+          <li class="correct">Léi Yǐng Lee</li>
+          <li class="correct">Mike Santana</li>
+          <li class="correct">Eddie Edwards</li>
+        </ul>
       </div>
     </div>
-  </section>
+  </div>
 
-  <a href="/" class="back-btn">← Back to League Table</a>
+  <div class="archive-nav">
+    <a href="/">🏠 Home</a>
+    <a href="/archive/tna.html">TNA</a>
+    <a href="/archive/wwe.html">WWE</a>
+    <a href="/archive/aew.html">AEW</a>
+    <a href="/archive/nxt.html">NXT</a>
+  </div>
 
 </main>
 

@@ -89,13 +89,16 @@ export default function App() {
           <h1>Fantasy Wrestling League</h1>
           <p>Live standings</p>
           <div className="nav-buttons">
-                <a href="/rules.html" className="rules-btn">Rules</a>
-                <a href="/archive/tna.html">TNA Archive</a>
-                <a href="/archive/wwe.html">WWE Archive</a>
-                <a href="/archive/nxt.html">NXT Archive</a>
-                <a href="/archive/aew.html">AEW Archive</a>
+             <div className="nav-buttons">
+          <a href="/rules.html" className="nav-btn">Rules</a>
+          <a href="/archive/tna.html" className="nav-btn">TNA Archive</a>
+          <a href="/archive/wwe.html" className="nav-btn">WWE Archive</a>
+          <a href="/archive/aew.html" className="nav-btn">AEW Archive</a>
+          <a href="/archive/nxt.html" className="nav-btn">NXT Archive</a>
         </div>
         </div>
+        </div>
+        
 
         <div className="logo-group right">
           <img src="/img/nxt.png" alt="NXT" />

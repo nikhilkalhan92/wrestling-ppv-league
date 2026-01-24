@@ -203,22 +203,30 @@ h2 {
   50% { box-shadow: 0 0 12px gold; }
   100% { box-shadow: 0 0 4px gold; }
 }
-/* NAVIGATION BUTTONS */
+
 .nav-buttons {
-  margin-top: 12px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;      /* wraps cleanly on mobile */
+  gap: 8px;
 }
 
-.rules-btn {
-  display: inline-block;
-  padding: 8px 16px;
+.nav-btn {
+  padding: 5px 10px;
   background: linear-gradient(135deg, #f5c542, #e6a800);
   color: #111;
   font-weight: bold;
   text-decoration: none;
-  border-radius: 6px;
-  font-size: 14px;
+  border-radius: 5px;
+  font-size: 12px;
+  line-height: 1;
+  white-space: nowrap;
 }
 
-.rules-btn:hover {
+.nav-btn:hover {
   filter: brightness(1.1);
+}
+.nav-btn:active {
+  filter: brightness(0.9);
 }
