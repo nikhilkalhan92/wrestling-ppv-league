@@ -199,11 +199,6 @@ export default function App() {
                   {ppvs.map(ppv => (
                     <tr
                       key={ppv}
-                      className={
-                        ppv === latestPPV && company === latestCompany
-                          ? "latest-ppv"
-                          : ""
-                      }
                     >
                       <td>
                         {ppv} / {maxPoints[ppv]}
