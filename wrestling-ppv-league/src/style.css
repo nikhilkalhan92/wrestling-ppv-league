@@ -41,6 +41,26 @@ body {
   opacity: 0.85;
 }
 
+/* NAV BUTTONS */
+.nav-buttons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.nav-btn {
+  padding: 6px 12px;
+  background: linear-gradient(135deg, #f5c542, #e6a800);
+  color: #111;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 999px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
 /* LAYOUT */
 main {
   max-width: 1200px;
@@ -52,9 +72,15 @@ section {
   margin-top: 56px;
 }
 
-/* TABLES */
+/* TABLE */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
 table {
   width: 100%;
+  min-width: 720px;
   border-collapse: collapse;
   background: #1b1b1b;
   border-radius: 10px;
@@ -64,10 +90,8 @@ table {
 
 th {
   background: #111;
-  color: #fff;
   padding: 14px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
 }
 
 td {
@@ -76,17 +100,7 @@ td {
   border-bottom: 1px solid #2a2a2a;
 }
 
-thead th {
-  position: sticky;
-  top: 0;
-  z-index: 2;
-}
-
-tbody tr:hover {
-  background: rgba(255,255,255,0.05);
-}
-
-/* WINNER / LOSER */
+/* WIN / LOSE */
 tr.winner {
   background: linear-gradient(90deg, #1e7f43, #145c31);
 }
@@ -95,107 +109,29 @@ tr.loser {
   background: linear-gradient(90deg, #8b1e1e, #5c1414);
 }
 
-/* RANK MOVEMENT */
-.rank-up {
-  animation: rankUp 0.8s ease;
-}
-
-.rank-down {
-  animation: rankDown 0.8s ease;
-}
-
-@keyframes rankUp {
-  from { background-color: rgba(30, 127, 67, 0.7); }
-  to { background-color: transparent; }
-}
-
-@keyframes rankDown {
-  from { background-color: rgba(139, 30, 30, 0.7); }
-  to { background-color: transparent; }
-}
-
-/* COMPANY TABLES */
-h2 {
-  border-left: 6px solid #f5c542;
-  padding-left: 14px;
-  margin-bottom: 16px;
-}
-
-/* PPV MAX */
-.ppv-max {
-  font-size: 12px;
-  opacity: 0.7;
-}
-
-/* TOTAL ROW */
-.company-total-row {
-  background: #111;
-  border-top: 2px solid #444;
-}
-
-.company-leader {
-  background: linear-gradient(135deg, #f5c542, #e6a800);
-  color: #111;
-  border-radius: 4px;
-}
-.company-leader td {
-  font-weight: bold;
-}
-
-/* CHANGE INDICATORS */
+/* PLAYER CELL */
 .player-cell {
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 6px;
 }
 
-.change {
-  font-size: 12px;
-  cursor: help;
-}
-
-.change.up {
-  color: #6aff6a;
-}
-
-.change.down {
-  color: #ff6a6a;
-}
-
-/* ICONS */
-.icon {
-  margin-left: 4px;
-}
-
-/* MOMENTUM */
-.momentum {
-  margin-left: 4px;
-  font-size: 14px;
-}
-
-.momentum.hot {
-  animation: pulseHot 1.5s infinite;
-}
-
-@keyframes pulseHot {
-  0% { text-shadow: 0 0 4px orange; }
-  50% { text-shadow: 0 0 10px orange; }
-  100% { text-shadow: 0 0 4px orange; }
-}
-
 /* LATEST PPV */
-.latest-ppv {
-  background: rgba(255, 215, 0, 0.15);
-}
-
-.latest-tag {
-  margin-left: 8px;
-  padding: 2px 6px;
+.latest-ppv-label {
+  margin-top: 4px;
   font-size: 10px;
   background: gold;
-  color: #000;
-  border-radius: 4px;
+  color: #111;
+  padding: 2px 6px;
+  border-radius: 999px;
+  display: inline-block;
   animation: glow 1.5s infinite;
+}
+
+.latest-ppv-cell {
+  background: rgba(255, 215, 0, 0.15);
+  font-weight: bold;
 }
 
 @keyframes glow {
@@ -204,29 +140,63 @@ h2 {
   100% { box-shadow: 0 0 4px gold; }
 }
 
-.nav-buttons {
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;      /* wraps cleanly on mobile */
-  gap: 8px;
-}
 
-.nav-btn {
-  padding: 5px 10px;
-  background: linear-gradient(135deg, #f5c542, #e6a800);
-  color: #111;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 12px;
-  line-height: 1;
-  white-space: nowrap;
-}
+/* =========================
+   MOBILE HEADER FIX
+   ========================= */
+@media (max-width: 768px) {
 
-.nav-btn:hover {
-  filter: brightness(1.1);
-}
-.nav-btn:active {
-  filter: brightness(0.9);
+  /* Kill the 3-column grid on mobile */
+  .site-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 12px;
+    gap: 12px;
+  }
+
+  /* Logos row */
+  .logo-group {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .logo-group img {
+    height: 42px;
+    max-width: 100px;
+  }
+
+  /* Title */
+  .title h1 {
+    font-size: 22px;
+    line-height: 1.2;
+  }
+
+  .title p {
+    font-size: 13px;
+  }
+
+  /* Buttons: horizontal scroll chips */
+  .nav-buttons {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: 8px;
+    padding-bottom: 6px;
+  }
+
+  .nav-buttons::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-btn {
+    flex: 0 0 auto;
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 999px;
+  }
 }
