@@ -1,29 +1,47 @@
+/* ===============================
+   GLOBAL
+================================ */
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #0e0e0e;
-  color: white;
+  color: #fff;
 }
 
-/* ✅ HEADER SAME AS ARCHIVES */
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* ===============================
+   HEADER (Same as Archive Style)
+================================ */
+
 .archive-header {
-  background: linear-gradient(180deg, #111, #000);
-  padding: 30px 15px;
   text-align: center;
+  padding: 40px 20px 25px;
+  background: radial-gradient(circle, #1a1a1a, #000);
 }
 
 .archive-header h1 {
+  font-size: 38px;
   margin: 0;
-  font-size: 32px;
 }
 
 .archive-header p {
-  margin: 6px 0 15px;
-  opacity: 0.8;
+  opacity: 0.7;
+  margin-top: 6px;
+  font-size: 15px;
 }
 
-/* ✅ NAV BUTTONS */
+/* ===============================
+   NAV BUTTONS
+================================ */
+
 .nav-bar {
+  margin-top: 18px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -31,68 +49,80 @@ body {
 }
 
 .nav-bar a {
-  padding: 8px 14px;
   background: linear-gradient(135deg, #f5c542, #e6a800);
-  color: #111;
-  font-weight: bold;
-  text-decoration: none;
+  padding: 8px 14px;
   border-radius: 8px;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
   font-size: 13px;
 }
 
 .nav-bar a:hover {
-  filter: brightness(1.1);
+  filter: brightness(1.15);
 }
 
-/* ✅ LOGOS */
+/* ===============================
+   LOGOS (Mobile Friendly)
+================================ */
+
 .mini-logos {
-  margin-top: 18px;
+  margin-top: 20px;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   gap: 14px;
+  flex-wrap: wrap;
 }
 
 .mini-logos img {
   height: 42px;
-  max-width: 110px;
+  max-width: 90px;
   object-fit: contain;
 }
 
-/* ✅ MAIN CARD */
-main {
-  padding: 25px 12px;
-}
+/* ===============================
+   CARD BLOCKS (Archive Look)
+================================ */
 
 .card {
-  max-width: 1000px;
-  margin: auto;
   background: #1b1b1b;
-  border-radius: 14px;
   padding: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  margin-bottom: 45px;
 }
 
 .card h2 {
   margin-top: 0;
-  color: #f5c542;
+  border-left: 6px solid #f5c542;
+  padding-left: 12px;
 }
 
-/* ✅ TABLE */
+/* ===============================
+   TABLE WRAPPER (Fix Mobile Swipe)
+================================ */
+
 .table-wrapper {
+  width: 100%;
   overflow-x: auto;
+  border-radius: 14px;
 }
 
 table {
   width: 100%;
-  min-width: 650px;
+  min-width: 600px; /* forces scroll instead of squish */
   border-collapse: collapse;
+  background: #222;
+  border-radius: 14px;
+  overflow: hidden;
 }
 
 th {
   background: #111;
   padding: 14px;
   text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.06em;
 }
 
 td {
@@ -101,27 +131,72 @@ td {
   border-bottom: 1px solid #333;
 }
 
-/* WINNER + LOSER */
+tbody tr:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* ===============================
+   WINNER + LOSER ROWS
+================================ */
+
 tr.winner {
   background: linear-gradient(90deg, #1e7f43, #145c31);
+  font-weight: bold;
 }
 
 tr.loser {
   background: linear-gradient(90deg, #8b1e1e, #5c1414);
+  font-weight: bold;
 }
 
-/* MOBILE */
-@media (max-width: 600px) {
+/* ===============================
+   MINI COMPANY TABLES
+================================ */
+
+section {
+  margin-top: 60px;
+}
+
+section h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  border-left: 6px solid #f5c542;
+  padding-left: 12px;
+}
+
+/* Total row inside mini tables */
+
+.company-total-row {
+  background: #111;
+  font-weight: bold;
+  border-top: 2px solid #444;
+}
+
+/* ===============================
+   MOBILE OPTIMIZATION
+================================ */
+
+@media (max-width: 768px) {
   .archive-header h1 {
-    font-size: 24px;
+    font-size: 30px;
   }
 
   .nav-bar a {
     font-size: 12px;
-    padding: 7px 12px;
+    padding: 7px 10px;
   }
 
-  .mini-logos img {
-    height: 34px;
+  table {
+    min-width: 520px;
+  }
+
+  th,
+  td {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  section h2 {
+    font-size: 22px;
   }
 }
