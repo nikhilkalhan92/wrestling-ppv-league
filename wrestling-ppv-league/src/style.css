@@ -2,90 +2,91 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #0e0e0e;
-  color: #fff;
+  color: white;
 }
 
-/* HEADER */
-.site-header {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
+/* ✅ HEADER SAME AS ARCHIVES */
+.archive-header {
   background: linear-gradient(180deg, #111, #000);
-  padding: 28px 40px;
-}
-
-.logo-group {
-  display: flex;
-  justify-content: center;
-  gap: 28px;
-}
-
-.logo-group img {
-  height: 64px;
-  max-width: 140px;
-  object-fit: contain;
-}
-
-.title {
+  padding: 30px 15px;
   text-align: center;
 }
 
-.title h1 {
+.archive-header h1 {
   margin: 0;
-  font-size: 34px;
+  font-size: 32px;
 }
 
-.title p {
-  margin-top: 6px;
-  font-size: 14px;
-  opacity: 0.85;
+.archive-header p {
+  margin: 6px 0 15px;
+  opacity: 0.8;
 }
 
-/* NAV BUTTONS */
-.nav-buttons {
-  margin-top: 10px;
+/* ✅ NAV BUTTONS */
+.nav-bar {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
 }
 
-.nav-btn {
-  padding: 6px 12px;
+.nav-bar a {
+  padding: 8px 14px;
   background: linear-gradient(135deg, #f5c542, #e6a800);
   color: #111;
   font-weight: bold;
   text-decoration: none;
-  border-radius: 999px;
-  font-size: 12px;
-  white-space: nowrap;
+  border-radius: 8px;
+  font-size: 13px;
 }
 
-/* LAYOUT */
+.nav-bar a:hover {
+  filter: brightness(1.1);
+}
+
+/* ✅ LOGOS */
+.mini-logos {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.mini-logos img {
+  height: 42px;
+  max-width: 110px;
+  object-fit: contain;
+}
+
+/* ✅ MAIN CARD */
 main {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 0 24px;
+  padding: 25px 12px;
 }
 
-section {
-  margin-top: 56px;
+.card {
+  max-width: 1000px;
+  margin: auto;
+  background: #1b1b1b;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
 }
 
-/* TABLE */
+.card h2 {
+  margin-top: 0;
+  color: #f5c542;
+}
+
+/* ✅ TABLE */
 .table-wrapper {
-  width: 100%;
   overflow-x: auto;
 }
 
 table {
   width: 100%;
-  min-width: 720px;
+  min-width: 650px;
   border-collapse: collapse;
-  background: #1b1b1b;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
 }
 
 th {
@@ -97,10 +98,10 @@ th {
 td {
   padding: 14px;
   text-align: center;
-  border-bottom: 1px solid #2a2a2a;
+  border-bottom: 1px solid #333;
 }
 
-/* WIN / LOSE */
+/* WINNER + LOSER */
 tr.winner {
   background: linear-gradient(90deg, #1e7f43, #145c31);
 }
@@ -109,94 +110,18 @@ tr.loser {
   background: linear-gradient(90deg, #8b1e1e, #5c1414);
 }
 
-/* PLAYER CELL */
-.player-cell {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
-}
-
-/* LATEST PPV */
-.latest-ppv-label {
-  margin-top: 4px;
-  font-size: 10px;
-  background: gold;
-  color: #111;
-  padding: 2px 6px;
-  border-radius: 999px;
-  display: inline-block;
-  animation: glow 1.5s infinite;
-}
-
-.latest-ppv-cell {
-  background: rgba(255, 215, 0, 0.15);
-  font-weight: bold;
-}
-
-@keyframes glow {
-  0% { box-shadow: 0 0 4px gold; }
-  50% { box-shadow: 0 0 12px gold; }
-  100% { box-shadow: 0 0 4px gold; }
-}
-
-
-/* =========================
-   MOBILE HEADER FIX
-   ========================= */
-@media (max-width: 768px) {
-
-  /* Kill the 3-column grid on mobile */
-  .site-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 16px 12px;
-    gap: 12px;
+/* MOBILE */
+@media (max-width: 600px) {
+  .archive-header h1 {
+    font-size: 24px;
   }
 
-  /* Logos row */
-  .logo-group {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    width: 100%;
-  }
-
-  .logo-group img {
-    height: 42px;
-    max-width: 100px;
-  }
-
-  /* Title */
-  .title h1 {
-    font-size: 22px;
-    line-height: 1.2;
-  }
-
-  .title p {
-    font-size: 13px;
-  }
-
-  /* Buttons: horizontal scroll chips */
-  .nav-buttons {
-    width: 100%;
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    justify-content: flex-start;
-    gap: 8px;
-    padding-bottom: 6px;
-  }
-
-  .nav-buttons::-webkit-scrollbar {
-    display: none;
-  }
-
-  .nav-btn {
-    flex: 0 0 auto;
+  .nav-bar a {
     font-size: 12px;
-    padding: 6px 10px;
-    border-radius: 999px;
+    padding: 7px 12px;
+  }
+
+  .mini-logos img {
+    height: 34px;
   }
 }
