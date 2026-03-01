@@ -5,7 +5,9 @@
     "WWE": {
       "Saturday Night's Main Event": 4,
       "Royal Rumble": 158,
-      "Elimination Chamber": 0
+      "Elimination Chamber": 135,
+      "Wrestlemania Night 1": 0,
+      "Wrestlemania Night 2": 0
     },
     "AEW": {
       "Revolution": 0
@@ -51,7 +53,9 @@
       "WWE": {
         "Saturday Night's Main Event": 3,
         "Royal Rumble": 73,
-        "Elimination Chamber": 0
+        "Elimination Chamber": 35,
+        "Wrestlemania Night 1": 0,
+        "Wrestlemania Night 2": 0
       },
       "AEW": {
         "Revolution": 0
@@ -66,7 +70,9 @@
       "WWE": {
         "Saturday Night's Main Event": 2,
         "Royal Rumble": 73,
-        "Elimination Chamber": 0
+        "Elimination Chamber": 65,
+        "Wrestlemania Night 1": 0,
+        "Wrestlemania Night 2": 0
       },
       "AEW": {
         "Revolution": 0
@@ -81,7 +87,9 @@
       "WWE": {
         "Saturday Night's Main Event": 3,
         "Royal Rumble": 83,
-        "Elimination Chamber": 0
+        "Elimination Chamber": 35,
+        "Wrestlemania Night 1": 0,
+        "Wrestlemania Night 2": 0
       },
       "AEW": {
         "Revolution": 0
