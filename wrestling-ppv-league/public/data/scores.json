@@ -4,13 +4,13 @@
   "ppv_max_points": {
     "WWE": {
       "Saturday Night's Main Event": 4,
-      "Royal Rumble": 158,
+      "Royal Rumble": 220,
       "Elimination Chamber": 135,
       "Wrestlemania Night 1": 0,
       "Wrestlemania Night 2": 0
     },
     "AEW": {
-      "Revolution": 0
+      "Revolution": 29
     },
     "TNA": {
       "Genesis": 8
@@ -22,11 +22,11 @@
       "name": "Sam",
       "WWE": {
         "Saturday Night's Main Event": 3,
-        "Royal Rumble": 55,
+        "Royal Rumble": 115,
         "Elimination Chamber": 0
       },
       "AEW": {
-        "Revolution": 0
+        "Revolution": 8
       },
       "TNA": {
         "Genesis": 5
@@ -52,13 +52,13 @@
       "name": "Shaz",
       "WWE": {
         "Saturday Night's Main Event": 3,
-        "Royal Rumble": 73,
+        "Royal Rumble": 106,
         "Elimination Chamber": 35,
         "Wrestlemania Night 1": 0,
         "Wrestlemania Night 2": 0
       },
       "AEW": {
-        "Revolution": 0
+        "Revolution": 23
       },
       "TNA": {
         "Genesis": 5
@@ -69,13 +69,13 @@
       "name": "Jake",
       "WWE": {
         "Saturday Night's Main Event": 2,
-        "Royal Rumble": 73,
+        "Royal Rumble": 104,
         "Elimination Chamber": 65,
         "Wrestlemania Night 1": 0,
         "Wrestlemania Night 2": 0
       },
       "AEW": {
-        "Revolution": 0
+        "Revolution": 12
       },
       "TNA": {
         "Genesis": 4
@@ -86,13 +86,13 @@
       "name": "Nik",
       "WWE": {
         "Saturday Night's Main Event": 3,
-        "Royal Rumble": 83,
+        "Royal Rumble": 101,
         "Elimination Chamber": 35,
         "Wrestlemania Night 1": 0,
         "Wrestlemania Night 2": 0
       },
       "AEW": {
-        "Revolution": 0
+        "Revolution": 13
       },
       "TNA": {
         "Genesis": 5
