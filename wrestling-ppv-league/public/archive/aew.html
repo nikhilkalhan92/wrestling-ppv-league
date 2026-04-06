@@ -1,12 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>AEW PPV Archive</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8" />
+<title>AEW PPV Archive</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:#0e0e0e;
+color:#fff;
+}
+
+header{
+background:linear-gradient(180deg,#111,#000);
+padding:24px;
+text-align:center;
+}
+
+h1{
+margin:0;
+font-size:34px;
+}
+
+/* NAV */
+.nav-bar{
+margin-top:16px;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:10px;
+}
+
+.nav-bar a{
+padding:8px 14px;
+background:linear-gradient(135deg,#f5c542,#e6a800);
+color:#111;
+font-weight:bold;
+text-decoration:none;
+border-radius:6px;
+font-size:13px;
+}
+
+main{
+max-width:1100px;
+margin:40px auto;
+padding:0 18px;
+}
+
+/* PPV TABS */
+details{
+background:#1b1b1b;
+border-radius:12px;
+margin-bottom:20px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,.6);
+}
+
+summary{
+cursor:pointer;
+padding:18px 20px;
+font-size:20px;
+font-weight:bold;
+background:#111;
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+summary:hover{
+background:#222;
+}
+
+summary img{
+height:38px;
+}
+
+.ppv-content{
+padding:20px;
+}
+
+ul{
+padding-left:20px;
+}
+
+li{
+margin-bottom:10px;
+line-height:1.5;
+}
+
+.title-match{
+color:#f5c542;
+font-weight:bold;
+}
+
+hr{
+margin:25px 0;
+opacity:.3;
+}
+
+/* prediction images */
+.predictions-row{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+margin-top:15px;
+}
+
+.predictions-row img{
+width:100%;
+max-width:420px;
+border-radius:10px;
+box-shadow:0 8px 25px rgba(0,0,0,.7);
+}
+
+/* mobile */
+@media (max-width:600px){
+
+summary{
+font-size:18px;
+}
+
+summary img{
+height:32px;
+}
+
+.predictions-row{
+flex-direction:column;
+align-items:center;
+}
+
+.predictions-row img{
+max-width:100%;
+}
+
+}
+</style>
 </head>
-<body style="background:#0e0e0e;color:#fff;font-family:Arial;text-align:center;padding:40px;">
-  <h1>AEW PPV Archive</h1>
-  <p style="opacity:0.6;">No archived AEW PPVs yet.</p>
+
+<body>
+
+<header>
+<h1>AEW PPV Archive</h1>
+
+<div class="nav-bar">
+<a href="/">Home</a>
+<a href="/rules.html">Rules</a>
+<a href="/archive/wwe.html">WWE</a>
+<a href="/archive/aew.html">AEW</a>
+<a href="/archive/tna.html">TNA</a>
+<a href="/archive/nxt.html">NXT</a>
+</div>
+</header>
+
+<main>
+
+<!-- AEW REVOLUTION -->
+<details>
+<summary>
+<img src="/img/aew.png" alt="AEW Logo">
+AEW Revolution 2026
+</summary>
+
+<div class="ppv-content">
+
+<ul>
+<li>
+<strong>Boom & Doom ("Big Boom!" A.J. and Q.T. Marshall)</strong> (with Aaron Solo, Big Justice, and The Rizzler) defeated The Infantry (Capt. Shawn Dean and Carlie Bravo) (with Christyan XO, Shane Taylor, and Trish Adora) —
+<span class="title-match">Tag Team Match</span>
+</li>
+
+<li>
+<strong>Willow Nightingale (c)</strong> defeated Lena Kross —
+<span class="title-match">AEW TBS Championship</span>
+</li>
+
+<li>
+<strong>Jack Perry</strong> won by last eliminating Ricochet (c) —
+<span class="title-match">21-Man Blackjack Battle Royal for the AEW National Championship</span>
+</li>
+
+<li>
+<strong>FTR (Dax Harwood and Cash Wheeler) (c)</strong> (with Stokely) defeated The Young Bucks (Nick Jackson and Matt Jackson) —
+<span class="title-match">AEW World Tag Team Championship</span>
+</li>
+
+<li>
+<strong>"Timeless" Toni Storm</strong> defeated Marina Shafir —
+<span class="title-match">Singles Match</span>
+</li>
+
+<li>
+<strong>Jon Moxley (c)</strong> defeated Konosuke Takeshita —
+<span class="title-match">No Time Limit Match for the AEW Continental Championship</span>
+</li>
+
+<li>
+<strong>Divine Dominion (Megan Bayne and Lena Kross)</strong> defeated The Babes of Wrath (Harley Cameron and Willow Nightingale) (c) —
+<span class="title-match">AEW Women’s World Tag Team Championship</span>
+</li>
+
+<li>
+<strong>Swerve Strickland</strong> (with Prince Nana) defeated Brody King —
+<span class="title-match">Singles Match</span>
+</li>
+
+<li>
+<strong>Thekla (c)</strong> defeated Kris Statlander 2–1 —
+<span class="title-match">Two Out of Three Falls Match for the AEW Women’s World Championship</span>
+</li>
+
+<li>
+<strong>Místico and JetSpeed (Kevin Knight and "Speedball" Mike Bailey)</strong> defeated The Don Callis Family (Kazuchika Okada, Kyle Fletcher, and Mark Davis) (c) —
+<span class="title-match">AEW World Trios Championship</span>
+</li>
+
+<li>
+<strong>Andrade El Idolo</strong> (with Don Callis) defeated Bandido —
+<span class="title-match">Singles Match</span>
+</li>
+
+<li>
+<strong>Darby Allin, Orange Cassidy, and Roderick Strong</strong> defeated The Dogs (David Finlay, Gabe Kidd, and Clark Connors) —
+<span class="title-match">Tornado Trios Match</span>
+</li>
+
+<li>
+<strong>MJF (c)</strong> defeated "Hangman" Adam Page —
+<span class="title-match">Last Chance Texas Deathmatch for the AEW World Championship</span>
+</li>
+</ul>
+
+<hr>
+
+<h3>Player Predictions</h3>
+
+<div class="predictions-row">
+<img src="/img/rev1.png" alt="AEW Revolution prediction 1">
+<img src="/img/rev2.png" alt="AEW Revolution prediction 2">
+<img src="/img/rev3.png" alt="AEW Revolution prediction 3">
+<img src="/img/rev4.png" alt="AEW Revolution prediction 4">
+</div>
+
+</div>
+</details>
+
+</main>
 </body>
 </html>

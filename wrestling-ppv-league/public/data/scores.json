@@ -26,12 +26,15 @@
         "Elimination Chamber": 0
       },
       "AEW": {
-        "Revolution": 8
+        "Revolution": 8,
+        "Dynasty": 0
       },
       "TNA": {
         "Genesis": 5
       },
-      "NXT": {}
+      "NXT": {
+        "Stand & Deliver": 10
+      }
     },
     {
       "name": "Tom",
@@ -41,7 +44,8 @@
         "Elimination Chamber": 0
       },
       "AEW": {
-        "Revolution": 0
+        "Revolution": 0,
+        "Dynasty": 0
       },
       "TNA": {
         "Genesis": 3
@@ -58,12 +62,13 @@
         "Wrestlemania Night 2": 0
       },
       "AEW": {
-        "Revolution": 23
+        "Revolution": 23,
+        "Dynasty": 0
       },
       "TNA": {
         "Genesis": 5
       },
-      "NXT": {"Stand & Deliver": 0}
+      "NXT": {"Stand & Deliver": 10}
     },
     {
       "name": "Jake",
@@ -75,12 +80,13 @@
         "Wrestlemania Night 2": 0
       },
       "AEW": {
-        "Revolution": 12
+        "Revolution": 12,
+        "Dynasty": 0
       },
       "TNA": {
         "Genesis": 4
       },
-      "NXT": {"Stand & Deliver": 0}
+      "NXT": {"Stand & Deliver": 10}
     },
     {
       "name": "Nik",
@@ -92,12 +98,13 @@
         "Wrestlemania Night 2": 0
       },
       "AEW": {
-        "Revolution": 13
+        "Revolution": 13,
+        "Dynasty": 0
       },
       "TNA": {
         "Genesis": 5
       },
-      "NXT": {"Stand & Deliver": 0}
+      "NXT": {"Stand & Deliver": 15}
     }
   ]
 }
