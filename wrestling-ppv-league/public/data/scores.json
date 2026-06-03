@@ -48,22 +48,6 @@
       }
     },
     {
-      "name": "Tom",
-      "WWE": {
-        "Saturday Night's Main Event": 0,
-        "Royal Rumble": 52,
-        "Elimination Chamber": 0
-      },
-      "AEW": {
-        "Revolution": 0,
-        "Dynasty": 0
-      },
-      "TNA": {
-        "Genesis": 3
-      },
-      "NXT": {"Stand & Deliver": 0}
-    },
-    {
       "name": "Shaz",
       "WWE": {
         "Saturday Night's Main Event": 3,
