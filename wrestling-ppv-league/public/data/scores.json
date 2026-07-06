@@ -10,17 +10,22 @@
       "Wrestlemania Night 2": 25,
       "Backlash": 23,
       "Saturday Night's Main Event 2": 15,
-      "Clash in Italy": 17
+      "Clash in Italy": 17,
+      "Night of Champions": 25
     },
     "AEW": {
       "Revolution": 29,
       "Dynasty": 57,
-      "AEW Double or Nothing": 29
+      "AEW Double or Nothing": 29,
+      "Forbidden Door": 40
     },
     "TNA": {
       "Genesis": 8
     },
-    "NXT": {"Stand & Deliver": 0}
+    "NXT": {
+      "Stand & Deliver": 0,
+      "The Great American Bash": 35
+    }
   },
   "players": [
     {
@@ -33,18 +38,21 @@
         "Wrestlemania Night 2": 9,
         "Backlash": 9,
         "Saturday Night's Main Event 2": 0,
-        "Clash in Italy": 14
+        "Clash in Italy": 14,
+        "Night of Champions": 13
       },
       "AEW": {
         "Revolution": 26,
         "Dynasty": 0,
-        "AEW Double or Nothing": 0
+        "AEW Double or Nothing": 0,
+        "Forbidden Door": 20
       },
       "TNA": {
         "Genesis": 5
       },
       "NXT": {
-        "Stand & Deliver": 10
+        "Stand & Deliver": 10,
+        "The Great American Bash": 8
       }
     },
     {
@@ -57,17 +65,20 @@
         "Wrestlemania Night 2": 9,
         "Backlash": 20,
         "Saturday Night's Main Event 2": 12,
-        "Clash in Italy": 11
+        "Clash in Italy": 11,
+        "Night of Champions": 12
       },
       "AEW": {
         "Revolution": 23,
         "Dynasty": 27,
-        "AEW Double or Nothing": 21
+        "AEW Double or Nothing": 21,
+        "Forbidden Door": 40
       },
       "TNA": {
         "Genesis": 5
       },
-      "NXT": {"Stand & Deliver": 10}
+      "NXT": {"Stand & Deliver": 10,
+      "The Great American Bash":16}
     },
     {
       "name": "Jake",
@@ -79,17 +90,20 @@
         "Wrestlemania Night 2": 12,
         "Backlash": 14,
         "Saturday Night's Main Event 2": 0,
-        "Clash in Italy": 11
+        "Clash in Italy": 11,
+        "Night of Champions": 8
       },
       "AEW": {
         "Revolution": 12,
         "Dynasty": 29,
-        "AEW Double or Nothing": 26
+        "AEW Double or Nothing": 26,
+        "Forbidden Door": 40
       },
       "TNA": {
         "Genesis": 4
       },
-      "NXT": {"Stand & Deliver": 10}
+      "NXT": {"Stand & Deliver": 10,
+              "The Great American Bash": 12}
     },
     {
       "name": "Nik",
@@ -101,18 +115,21 @@
         "Wrestlemania Night 2": 15,
         "Backlash": 14,
         "Saturday Night's Main Event 2": 0,
-        "Clash in Italy": 14
+        "Clash in Italy": 14,
+        "Night of Champions": 12
 
       },
       "AEW": {
         "Revolution": 13,
         "Dynasty": 29,
-        "AEW Double or Nothing": 26
+        "AEW Double or Nothing": 26,
+        "Forbidden Door": 40
       },
       "TNA": {
         "Genesis": 5
       },
-      "NXT": {"Stand & Deliver": 15}
+      "NXT": {"Stand & Deliver": 15,
+              "The Great American Bash": 21}
     }
   ]
-}
+  }
