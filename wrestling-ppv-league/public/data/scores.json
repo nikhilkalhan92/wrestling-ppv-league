@@ -11,13 +11,15 @@
       "Backlash": 23,
       "Saturday Night's Main Event 2": 15,
       "Clash in Italy": 17,
-      "Night of Champions": 25
+      "Night of Champions": 25,
+      "Saturday Night's Main Event 3": 16
     },
     "AEW": {
       "Revolution": 29,
       "Dynasty": 57,
       "AEW Double or Nothing": 29,
-      "Forbidden Door": 40
+      "Forbidden Door": 40,
+      "Redemption": 49
     },
     "TNA": {
       "Genesis": 8
@@ -39,13 +41,15 @@
         "Backlash": 9,
         "Saturday Night's Main Event 2": 0,
         "Clash in Italy": 14,
-        "Night of Champions": 13
+        "Night of Champions": 13,
+        "Saturday Night's Main Event 3": 12
       },
       "AEW": {
         "Revolution": 26,
         "Dynasty": 0,
         "AEW Double or Nothing": 0,
-        "Forbidden Door": 20
+        "Forbidden Door": 20,
+        "Redemption": 17
       },
       "TNA": {
         "Genesis": 5
@@ -66,13 +70,15 @@
         "Backlash": 20,
         "Saturday Night's Main Event 2": 12,
         "Clash in Italy": 11,
-        "Night of Champions": 12
+        "Night of Champions": 12,
+        "Saturday Night's Main Event 3": 12
       },
       "AEW": {
         "Revolution": 23,
         "Dynasty": 27,
         "AEW Double or Nothing": 21,
-        "Forbidden Door": 40
+        "Forbidden Door": 40,
+        "Redemption": 25
       },
       "TNA": {
         "Genesis": 5
@@ -91,13 +97,15 @@
         "Backlash": 14,
         "Saturday Night's Main Event 2": 0,
         "Clash in Italy": 11,
-        "Night of Champions": 8
+        "Night of Champions": 8,
+        "Saturday Night's Main Event 3": 0
       },
       "AEW": {
         "Revolution": 12,
         "Dynasty": 29,
         "AEW Double or Nothing": 26,
-        "Forbidden Door": 40
+        "Forbidden Door": 40,
+        "Redemption": 37
       },
       "TNA": {
         "Genesis": 4
@@ -116,14 +124,16 @@
         "Backlash": 14,
         "Saturday Night's Main Event 2": 0,
         "Clash in Italy": 14,
-        "Night of Champions": 12
+        "Night of Champions": 12,
+        "Saturday Night's Main Event 3": 12
 
       },
       "AEW": {
         "Revolution": 13,
         "Dynasty": 29,
         "AEW Double or Nothing": 26,
-        "Forbidden Door": 40
+        "Forbidden Door": 40,
+        "Redemption": 29
       },
       "TNA": {
         "Genesis": 5
