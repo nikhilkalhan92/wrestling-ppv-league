@@ -12,7 +12,9 @@
       "SNME2": 15,
       "Clash in Italy": 17,
       "Night of Champions": 25,
-      "SNME3": 16
+      "SNME3": 16,
+      "Summerslam Night 1": 25,
+      "Summerslam Night 2": 25
     },
     "AEW": {
       "Revolution": 29,
@@ -42,7 +44,9 @@
         "SNME2": 0,
         "Clash in Italy": 14,
         "Night of Champions": 13,
-        "SNME3": 12
+        "SNME3": 12,
+        "Summerslam Night 1": 17,
+        "Summerslam Night 2": 13
       },
       "AEW": {
         "Revolution": 26,
@@ -71,7 +75,9 @@
         "SNME2": 12,
         "Clash in Italy": 11,
         "Night of Champions": 12,
-        "SNME3": 12
+        "SNME3": 12,
+        "Summerslam Night 1": 8,
+        "Summerslam Night 2": 17
       },
       "AEW": {
         "Revolution": 23,
@@ -98,7 +104,9 @@
         "SNME2": 0,
         "Clash in Italy": 11,
         "Night of Champions": 8,
-        "SNME3": 0
+        "SNME3": 0,
+        "Summerslam Night 1": 17,
+        "Summerslam Night 2": 13
       },
       "AEW": {
         "Revolution": 12,
@@ -125,7 +133,9 @@
         "SNME2": 0,
         "Clash in Italy": 14,
         "Night of Champions": 12,
-        "SNME3": 12
+        "SNME3": 12,
+        "Summerslam Night 1": 21,
+        "Summerslam Night 2": 13
 
       },
       "AEW": {
